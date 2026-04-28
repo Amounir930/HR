@@ -1,73 +1,44 @@
-# React + TypeScript + Vite
+# Mobica HR & Payroll Suite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive Human Resources and Payroll management system tailored for the Egyptian market (Laws 91/2005, 148/2019, 14/2025).
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dashboard**: Real-time insights into headcount, attendance, and payroll.
+- **Employee Management**: Full employee records, positions, and departments.
+- **Egyptian Payroll Engine**: 
+  - Progressive tax calculation (2026 brackets).
+  - Social Insurance (Law 148/2019).
+  - Universal Health Insurance.
+  - Law 14/2025 Labor Law compliance.
+- **Attendance & Leave**: Track presence, late entries, and leave entitlements.
+- **Performance**: Goals (OKRs) and performance reviews.
+- **Recruitment**: Job openings and candidate tracking.
+- **Training**: Course catalog and enrollment management.
+- **Compliance & Safety**: Disciplinary actions and incident reporting (Near Miss, Injury, etc.).
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React 19 + Vite 8
+- **Styling**: Tailwind CSS 4
+- **Icons**: Lucide React
+- **Storage**: LocalStorage (Persistent across sessions)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run in development:
+   ```bash
+   npm run dev
+   ```
+4. Build for production:
+   ```bash
+   npm run build
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## License
+MIT
